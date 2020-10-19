@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using UpMeet.Services;
 
 namespace UpMeet
 {
@@ -26,6 +27,7 @@ namespace UpMeet
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddTransient<DAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
