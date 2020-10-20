@@ -10,12 +10,12 @@ using UpMeet.Models;
 
 namespace UpMeet.Services
 {
-    public class DAL
+    public class DAL: IDAL
     {
         private string connString;
         public DAL(IConfiguration config)
         {
-            connString = config.GetConnectionString("Manny");
+            connString = config.GetConnectionString("Brendan");
         }
         public IEnumerable<Events> GetAllEvents()
         {

@@ -26,9 +26,9 @@ namespace UpMeet.Controllers
         }
 
         [HttpGet("{id}")]
-        public Events GetEvent(long id)
+        public Events GetEvent(long? id)
         {
-            return dal.GetEvent(id);
+            return dal.GetEvent((long)id); // cast?
         }
 
         [HttpPost]

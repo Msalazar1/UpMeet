@@ -27,7 +27,7 @@ namespace UpMeet
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            services.AddTransient<DAL>();
+            services.AddTransient<IDAL,DAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
