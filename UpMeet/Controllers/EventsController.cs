@@ -19,10 +19,26 @@ namespace UpMeet.Controllers
             this.dal = dal;
         }
 
+        [HttpGet]
         public IEnumerable<Events> GetAll()
         {
             return dal.GetAllEvents();
         }
+
+        [HttpGet("{id}")]
+        public Events GetEvent(long id)
+        {
+            return dal.GetEvent(id);
+        }
+
+        [HttpPost]
+        public void AddEvent(Events newEvent) {
+
+            dal.AddEvent(newEvent);
+        }
+
+
+
 
     }
 }
