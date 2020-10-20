@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UpMeet.Models;
+using UpMeet.Services;
 
 namespace UpMeet.Controllers
 {
@@ -12,9 +14,14 @@ namespace UpMeet.Controllers
     public class EventsController : ControllerBase
     {
         private IDAL dal;
-        public CartController(IDAL dal)
+        public EventsController(IDAL dal)
         {
             this.dal = dal;
+        }
+
+        public IEnumerable<Events> GetAll()
+        {
+            return dal.GetAllEvents();
         }
 
     }
