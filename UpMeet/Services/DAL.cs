@@ -48,5 +48,17 @@ namespace UpMeet.Services
             conn.Close();
             return result;
         }
+
+        public void AddFavorite(Favorites fav)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Insert(fav);
+        }
+
+        public void RemoveFavorite(Favorites fav)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Delete(new Favorites() {ID = fav.ID });
+        }
     }
 }
